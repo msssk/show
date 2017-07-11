@@ -1,0 +1,66 @@
+:root {
+	--background-color: black;
+	--text-color: rgb(188, 188, 188);
+	--gurmukhi-font: GurbaniAkharHeavy;
+	--normal-font: Corbel, Calibri, Arial, sans-serif;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+}
+
+body {
+	background: var(--background-color);
+	color: var(--text-color);
+	cursor: none;
+	font-family: var(--normal-font);
+	font-weight: bold;
+}
+
+.content {
+	height: 100%;
+	width: 100%;
+}
+
+.section {
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 0;
+	opacity: 0;
+	line-height: 1.3em;
+	text-align: center;
+	z-index: 0;
+}
+
+.gurmukhi {
+	font-family: var(--gurmukhi-font);
+}
+
+.ikongkar {
+	line-height: normal;
+}
+
+.hidden {
+	display: none;
+}
+
+.visible {
+	opacity: 1;
+	z-index: 1;
+}
+
+.blank {
+	background-color: var(--background-color);
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 10000;
+}
