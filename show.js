@@ -33,6 +33,7 @@ var show = {
 		this.onResize();
 
 		if (!pages || !pages.length) {
+			document.title = 'Ik Ongkar';
 			this.toggleIkongkar();
 			return;
 		}
