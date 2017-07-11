@@ -5,15 +5,12 @@ var show = {
 	started: false,
 
 	startup(pages) {
-		if (!pages || !pages.length) {
-			return;
-		}
-
 		if (this.started) {
 			console.warn('show already started');
 			return;
 		}
 
+		pages = pages || [];
 		this.chorusIndex = -1;
 		this.pages = pages;
 		this.started = true;
@@ -34,6 +31,11 @@ var show = {
 		this.createIkongkarNode();
 
 		this.onResize();
+
+		if (!pages || !pages.length) {
+			this.toggleIkongkar();
+			return;
+		}
 
 		/*if (window.location.hash) {
 			this.onHashChange();
@@ -96,10 +98,10 @@ var show = {
 	toggleIkongkar() {
 		if (this.ikongkarNode.classList.contains('visible')) {
 			this.ikongkarNode.classList.remove('visible');
-			this.activePage.classList.add('visible');
+			this.activePage && this.activePage.classList.add('visible');
 		}
 		else {
-			this.activePage.classList.remove('visible');
+			this.activePage && this.activePage.classList.remove('visible');
 			this.ikongkarNode.classList.add('visible');
 		}
 	},
